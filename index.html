@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teayaraa | Personal Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Cherry+Bomb+One&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --soft-pink: #ffdde1;
+            --soft-blue: #d4fc79;
+            --pastel-purple: #f3e5f5;
+            --text-color: #5d4037;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            color: var(--text-color);
+            background-color: #fffafb;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        .font-brand {
+            font-family: 'Cherry Bomb One', cursive;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+            border: 3px solid #ffffff;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(255, 182, 193, 0.2);
+        }
+
+        .photo-frame {
+            border: 8px solid white;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            background: #eee;
+            object-fit: cover;
+        }
+
+        .photo-frame:hover {
+            transform: rotate(0deg) scale(1.02);
+        }
+
+        .blob-bg {
+            position: fixed;
+            z-index: -1;
+            filter: blur(60px);
+            opacity: 0.5;
+            border-radius: 50%;
+        }
+
+        .skill-tag {
+            background: white;
+            border: 2px solid #ffb6c1;
+            padding: 10px 20px;
+            border-radius: 50px;
+            transition: all 0.3s;
+        }
+
+        .skill-tag:hover {
+            background: #ffb6c1;
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        /* Animasi Mengapung */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .floating {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .nav-link:hover {
+            color: #ff9a9e;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Dekorasi -->
+    <div class="blob-bg w-80 h-80 bg-pink-200 -top-20 -left-20"></div>
+    <div class="blob-bg w-96 h-96 bg-blue-100 bottom-0 right-0"></div>
+
+    <!-- Header -->
+    <nav class="fixed top-0 w-full z-50 p-4">
+        <div class="max-w-6xl mx-auto glass-card py-4 px-8 flex justify-between items-center">
+            <div class="text-3xl font-brand text-pink-400">Teayaraa</div>
+            <div class="hidden md:flex space-x-8 font-bold text-gray-500">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#portfolio" class="nav-link">Portfolio</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. Beranda (Home) -->
+    <section id="home" class="min-h-screen flex flex-col md:flex-row items-center justify-center pt-24 px-6">
+        <div class="md:w-1/2 text-center md:text-left space-y-6">
+            <div class="inline-block bg-pink-100 text-pink-500 px-4 py-1 rounded-full font-bold text-sm mb-2">
+                Welcome to my world! ✨
+            </div>
+            <h1 class="text-5xl md:text-7xl font-brand text-gray-800 leading-tight">
+                Thiara <br><span class="text-pink-400">Sinta Dewi</span>
+            </h1>
+            <p class="text-lg text-gray-500 max-w-md">
+                Reviewer film, pecinta seni, dan pelukis mimpi dari Subang. Mari jelajahi kreativitas bersamaku!
+            </p>
+            <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                <a href="#portfolio" class="bg-pink-400 text-white px-10 py-4 rounded-full font-bold shadow-lg hover:bg-pink-500 transition-all">Lihat Karya</a>
+                <a href="#contact" class="bg-white border-2 border-pink-400 text-pink-400 px-10 py-4 rounded-full font-bold hover:bg-pink-50 transition-all">Hubungi Aku</a>
+            </div>
+        </div>
+
+        <div class="md:w-1/2 mt-16 md:mt-0 flex justify-center relative">
+            <!-- TEMPAT FOTO PROFIL -->
+            <div class="relative floating">
+                <img src="https://i.imgur.com/0nE4Hoj.jpeg" 
+                     alt="Foto Thiara" 
+                     class="w-64 h-80 md:w-80 md:h-[450px] photo-frame rounded-[60px] -rotate-6">
+                <!-- Ornamen Dekorasi -->
+                <div class="absolute -top-6 -right-6 text-5xl">🌸</div>
+                <div class="absolute -bottom-6 -left-6 text-5xl">🎨</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Tentang & Pendidikan -->
+    <section id="about" class="py-20 px-6">
+        <div class="max-w-5xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1">
+                    <h2 class="text-4xl font-brand text-blue-400 mb-6">Siapakah Aku? ☁️</h2>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        Halo! Aku adalah Thiara, seorang siswi yang aktif di SMAN 1 Subang. Aku sangat mencintai dunia kesenian, mulai dari menggambar hingga aktif di kegiatan P5. Bagiku, seni adalah cara terbaik untuk mengekspresikan diri.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <h3 class="font-bold text-pink-400 flex items-center">
+                            <span class="mr-2 text-xl">🎓</span> Pendidikan:
+                        </h3>
+                        <div class="border-l-4 border-pink-100 ml-3 pl-6 space-y-6">
+                            <div>
+                                <p class="font-bold text-gray-700">SMAN 1 SUBANG</p>
+                                <p class="text-sm text-gray-400">Sekarang</p>
+                            </div>
+                            <div>
+                                <p class="font-bold text-gray-700">SMPN 1 PAGADEN BARAT</p>
+                            </div>
+                            <div>
+                                <p class="font-bold text-gray-700">SDN BENDUNGAN</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2 flex justify-center">
+                    <!-- TEMPAT GAMBAR TAMBAHAN (MISAL: FOTO KEGIATAN) -->
+                    <div class="glass-card p-4 rotate-3">
+                        <img src="https://i.imgur.com/i2Z7aC8.jpeg" 
+                             alt="Aktivitas Thiara" 
+                             class="rounded-2xl w-full max-w-sm">
+                        <p class="text-center font-bold mt-4 text-pink-300">My Novel Collection ✨</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Skills -->
+    <section class="py-20 bg-pink-50/30">
+        <div class="max-w-4xl mx-auto text-center px-6">
+            <h2 class="text-4xl font-brand text-yellow-500 mb-12">Keahlian & Hobi 🎈</h2>
+            <div class="flex flex-wrap justify-center gap-4">
+                <span class="skill-tag font-bold">🎬 Review Film</span>
+                <span class="skill-tag font-bold">📚 Membaca</span>
+                <span class="skill-tag font-bold">🎨 Menggambar</span>
+                <span class="skill-tag font-bold">🐝 Spelling Bee</span>
+                <span class="skill-tag font-bold">🎭 Kesenian</span>
+                <span class="skill-tag font-bold">🌟 Aktif P5</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Portofolio (Galeri Gambar Proyek) -->
+    <section id="portfolio" class="py-20 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-brand text-center text-purple-400 mb-16">Galeri Karya 🎀</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Proyek 1 -->
+                <div class="group relative">
+                    <div class="glass-card overflow-hidden transition-all group-hover:-translate-y-2">
+                        <!-- TEMPAT GAMBAR PROYEK 1 -->
+                        <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=500&auto=format&fit=crop" 
+                             alt="Review Film" 
+                             class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-2">Movie Review</h3>
+                            <p class="text-gray-500 text-sm italic">Ulasan film dengan gaya bahasa santai ala Gen-Z.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyek 2 -->
+                <div class="group relative">
+                    <div class="glass-card overflow-hidden transition-all group-hover:-translate-y-2 border-blue-100">
+                        <!-- TEMPAT GAMBAR PROYEK 2 -->
+                        <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=500&auto=format&fit=crop" 
+                             alt="Karya Menggambar" 
+                             class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-2 text-blue-400">Art Collection</h3>
+                            <p class="text-gray-500 text-sm italic">Kumpulan gambar dan sketsa hasil karyaku sendiri.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyek 3 -->
+                <div class="group relative">
+                    <div class="glass-card overflow-hidden transition-all group-hover:-translate-y-2 border-yellow-100">
+                        <!-- TEMPAT GAMBAR PROYEK 3 -->
+                        <img src="https://i.imgur.com/bMlA50H.jpeg" 
+                             alt="Kegiatan Sekolah" 
+                             class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-2 text-yellow-600">School Achievement</h3>
+                            <p class="text-gray-500 text-sm italic">Pengalaman lomba Spelling Bee & Project P5.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Kontak -->
+    <section id="contact" class="py-20 px-6">
+        <div class="max-w-3xl mx-auto glass-card p-10 text-center shadow-2xl">
+            <h2 class="text-4xl font-brand text-pink-400 mb-6">Let's Connect! 🍓</h2>
+            <p class="text-gray-500 mb-10">Kamu bisa hubungi aku lewat jalur di bawah ini ya!</p>
+            
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="mailto:sintadewithiara279@gmail.com" class="bg-white border-2 border-pink-100 px-6 py-4 rounded-2xl flex items-center justify-center hover:bg-pink-50 transition-all font-bold">
+                    <span class="mr-2">✉️</span> Email Me
+                </a>
+                <a href="https://wa.me/081394597262" class="bg-green-400 text-white px-6 py-4 rounded-2xl flex items-center justify-center hover:bg-green-500 transition-all font-bold shadow-lg shadow-green-200">
+                    <span class="mr-2">💬</span> WhatsApp
+                </a>
+            </div>
+
+            <div class="mt-12 flex justify-center space-x-8 text-3xl opacity-60">
+                <a href="#" class="hover:opacity-100 hover:scale-110 transition-all">📸</a>
+                <a href="#" class="hover:opacity-100 hover:scale-110 transition-all">🎨</a>
+                <a href="#" class="hover:opacity-100 hover:scale-110 transition-all">🎮</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 text-center text-gray-400 bg-white">
+        <p class="font-brand text-2xl text-pink-300 mb-2">Teayaraa</p>
+        <p class="text-sm">© Thiara Sinta Dewi – 2026. <br> Made with 💖 in Subang.</p>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
